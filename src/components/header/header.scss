@@ -1,0 +1,128 @@
+////
+/// @group header
+/// @author kmturley
+////
+
+.header {
+    @extend .shadow;
+    background-color: $color-white;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: $color-white;
+    }
+
+    li a {
+        border-right: 1px solid $color-grey-lighter;
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #f4f4f4;
+    }
+
+    .logo {
+        display: block;
+        float: left;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 2rem;
+        padding: .5rem 1rem;
+        text-decoration: none;
+    }
+
+    .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 1.5rem 1rem;
+        position: relative;
+        user-select: none;
+    }
+
+    .menu-icon .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 18px;
+    }
+
+    .menu-icon .navicon:before,
+    .menu-icon .navicon:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .menu-icon .navicon:before {
+        top: 5px;
+    }
+
+    .menu-icon .navicon:after {
+        top: -5px;
+    }
+
+
+    .menu-btn {
+        display: none;
+    }
+
+    .menu-btn:checked ~ .menu {
+        max-height: 240px;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+}
+
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        line-height: 2rem;
+        padding: .5rem 1rem;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
