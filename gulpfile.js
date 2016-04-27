@@ -16,7 +16,7 @@ global.paths = {
     www: 'www',
     assets: '/assets',
     css: '/**/*.css',
-    html: '/**/*.html',
+    html: '/**/*.{html,tpl}',
     img: '/**/*.{jpg,png}',
     js: '/**/*.js',
     scss: '/**/*.scss',

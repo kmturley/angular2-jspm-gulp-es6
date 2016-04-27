@@ -19,7 +19,10 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
+    "css": "github:systemjs/plugin-css@0.1.21",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "shuhei/babel-plugin-angular2-annotations": "github:shuhei/babel-plugin-angular2-annotations@5.0.0",
+    "text": "github:systemjs/plugin-text@0.0.7",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
